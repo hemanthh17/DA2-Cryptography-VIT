@@ -1,13 +1,13 @@
 # Python3 program for the above approach
-# of RC4 algorithm
 
-# Function for encryption
 plain_text=input("Enter the plain text in Binary : ")
 key=input("Enter the key in Binary : ")
 n= int(input("Enter the no of bits to be considered at a time : "))
+
+#Encyption Function
 def encryption(plain_text, key,n):
 
-	# The initial state vector array
+	
 
 	print("Plain text : ", plain_text)
 	print("Key : ", key)
@@ -114,8 +114,7 @@ def encryption(plain_text, key,n):
 
 	XOR()
 
-	# Convert the encrypted text to
-	# bits form
+	# Convert the encrypted text to bits form
 	encrypted_to_bits = ""
 	for i in cipher_text:
 		encrypted_to_bits += '0'*(n-len(bin(i)[2:]))+bin(i)[2:]
@@ -124,9 +123,6 @@ def encryption(plain_text, key,n):
 	print("Cipher text : ", encrypted_to_bits)
 
 
-encryption(plain_text, key,n)
-
-print("---------------------------------------------------------")
 
 # Function for decryption of data
 def decryption():
@@ -220,15 +216,17 @@ def decryption():
 
 	do_XOR()
 
-	# convert the decrypted text to
-	# the bits form
+	# convert the decrypted text to the bits form
 	decrypted_to_bits = ""
 	for i in original_text:
 		decrypted_to_bits += '0'*(n-len(bin(i)[2:]))+bin(i)[2:]
 
 	print(" ")
-	print("Decrypted text : ",
-		decrypted_to_bits)
+	print("Decrypted text : ",decrypted_to_bits)
 
-# Driver Code
+# Driver Code for Encryption
+encryption(plain_text, key,n)
+
+print("---------------------------------------------------------")
+# Driver Code for Decryption
 decryption()
